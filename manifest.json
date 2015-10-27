@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Whistle Stop",
+  "description": "Closes browser on a whistle, credit to https://github.com/popdevelop/careless-whistle for whistle detection",
+  "version": "1.1.1",
+
+  "permissions": [
+    "tabs",
+    "audioCapture"
+  ],
+  "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-2.1.4.js",
+        "all-together.js"]
+    }
+  ]
+}

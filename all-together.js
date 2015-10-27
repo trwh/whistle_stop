@@ -521,10 +521,10 @@ FFT.prototype.forward = function(buffer) {
 
   window.Users = [
     {
-      name: 'Sebastian Wallin',
-      image: 'https://secure.gravatar.com/avatar/46ab5c60ced85b09c35fd31a510206ef?s=192',
-      sequence: [0, -40, -26, -85]
-    }, {
+    //   name: 'Sebastian Wallin',
+    //   image: 'https://secure.gravatar.com/avatar/46ab5c60ced85b09c35fd31a510206ef?s=192',
+    //   sequence: [0, -40, -26, -85]
+    // }, {
       name: 'Johan Brissmyr',
       image: 'http://www.gravatar.com/avatar/6b7b3a9f9d1c63a344cfc1d8ebb02981?s=192',
       sequence: [0]
@@ -556,23 +556,23 @@ FFT.prototype.forward = function(buffer) {
 
   LOGGED_IN = false;
 
-  setLoginState = function(user) {
-    var $el, cls, currPage, nextPage;
-    if (LOGGED_IN === !!user) {
-      return;
-    }
-    LOGGED_IN = !!user;
-    $el = $('#pt-main');
-    cls = !user ? '.login' : '.logout';
-    currPage = $el.find('.' + currentClass).addClass(outClass);
-    nextPage = $el.find(cls).addClass(inClass).addClass(currentClass);
-    setTimeout(function() {
-      currPage.removeClass(currentClass).removeClass(outClass);
-      return nextPage.removeClass(inClass);
-    }, 800);
-    $el.find('#name').text(user != null ? user.name : void 0);
-    $el.find('#avatar').attr('src', (user != null ? user.image : void 0) || '');
-  };
+  // setLoginState = function(user) {
+  //   var $el, cls, currPage, nextPage;
+  //   if (LOGGED_IN === !!user) {
+  //     return;
+  //   }
+  //   LOGGED_IN = !!user;
+  //   $el = $('#pt-main');
+  //   cls = !user ? '.login' : '.logout';
+  //   currPage = $el.find('.' + currentClass).addClass(outClass);
+  //   nextPage = $el.find(cls).addClass(inClass).addClass(currentClass);
+  //   setTimeout(function() {
+  //     currPage.removeClass(currentClass).removeClass(outClass);
+  //     return nextPage.removeClass(inClass);
+  //   }, 800);
+  //   $el.find('#name').text(user != null ? user.name : void 0);
+  //   $el.find('#avatar').attr('src', (user != null ? user.image : void 0) || '');
+  // };
 
   setPasswordField = function(sequence) {
     var html, s;
@@ -605,13 +605,13 @@ FFT.prototype.forward = function(buffer) {
         if (arrayEquals(currentSequence, user.sequence)) {
           console.log("success");
           chrome.runtime.sendMessage({shutdown: true}, function(){});
-          setLoginState(user);
+          // setLoginState(user);
         }
       }
     },
-    logout: function() {
-      setLoginState(null);
-    }
+    // logout: function() {
+    //   setLoginState(null);
+    // }
   };
 
   // canvas = document.getElementById('fft');

@@ -8,6 +8,10 @@ Available for download here:
 
 https://chrome.google.com/webstore/detail/close-browser-shortcut/lhngddjdgdjkeccbdjfapfconjkhbaed/related?authuser=1
 
+Based on:
+
+https://github.com/popdevelop/careless-whistle
+
 ***
 
 [Initial Research](https://github.com/trwh/whistle_stop/wiki/Research)

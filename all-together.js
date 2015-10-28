@@ -341,8 +341,8 @@ FFT.prototype.forward = function(buffer) {
 
     _defaultOptions = {
       tolerance: 10,
-      minDuration: 20,
-      idleTimeout: 40
+      minDuration: 30,
+      idleTimeout: 30
     };
 
     function NoteRecorder(audio, opts) {

@@ -1,18 +1,19 @@
-describe("Player", function() {
+describe("Window", function() {
   var player;
   var song;
 
   beforeEach(function() {
-    player = new Player();
-    song = new Song();
   });
 
-  it("should be able to play a Song", function() {
-    player.play(song);
-    expect(player.currentlyPlayingSong).toEqual(song);
+  it("has a sequence of length two.", function() {
+    expect(window.Sequences.length).toEqual(2);
+  });
 
-    //demonstrates use of custom matcher
-    expect(player).toBePlaying(song);
+  it("is requested to shutdown correctly", function() {
+    spyOn(chrome, "runtime").and.callThrough();
+    spyOn(chrome.runtime, "sendMessage");
+    window.Authentication.login([0]);
+    expect(chrome.runtime.sendMessage).toHaveBeenCalledWith({shutdown: "STOP"}, jasmine.any(Function));
   });
 
   // it("should be able to play a Song", function() {

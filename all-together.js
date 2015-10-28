@@ -473,7 +473,7 @@ FFT.prototype.forward = function(buffer) {
         predefinedSequence = Sequences[i];
         if (arrayEquals(currentSequence, predefinedSequence.relativePitches)) {
           chrome.runtime.sendMessage({shutdown: predefinedSequence.action}, function(response){
-            console.log(response.answer);
+            // console.log(response.answer);
           });
           console.log("success");
         }

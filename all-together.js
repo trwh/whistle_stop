@@ -464,7 +464,7 @@ FFT.prototype.forward = function(buffer) {
       currentSequence = sequence;
     },
     login: function(sequence) {
-      var j, len;
+      var j, len, savedSequence;
       if (sequence) {
         Authentication.setPassword(sequence);
       }

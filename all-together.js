@@ -431,11 +431,11 @@ FFT.prototype.forward = function(buffer) {
 
   window.Sequences = [
     {
-      sequence: [0],
+      relativePitches: [0],
       action: "STOP"
     },
     {
-      sequence: [0, -15, 0, -48, -68],
+      relativePitches: [0, -15, 0, -48, -68],
       action: "Dinos"
     }
   ];
@@ -464,15 +464,15 @@ FFT.prototype.forward = function(buffer) {
       currentSequence = sequence;
     },
     login: function(sequence) {
-      var j, len, savedSequence;
+      var j, len, predefinedSequence;
       if (sequence) {
         Authentication.setPassword(sequence);
       }
       console.log(currentSequence);
       for (i = Sequences.length-1; i >= 0; i--) {
-        savedSequence = Sequences[i];
-        if (arrayEquals(currentSequence, savedSequence.sequence)) {
-          chrome.runtime.sendMessage({shutdown: savedSequence.action}, function(response){
+        predefinedSequence = Sequences[i];
+        if (arrayEquals(currentSequence, predefinedSequence.relativePitches)) {
+          chrome.runtime.sendMessage({shutdown: predefinedSequence.action}, function(response){
             console.log(response.answer);
           });
           console.log("success");
